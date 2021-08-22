@@ -1,0 +1,21 @@
+<div class="sectionNarrow">
+
+    <app-divider [color]="'#118ab2'">
+      <h1>Modal</h1>
+    </app-divider>
+
+    <button (click)="triggerModal()">Show Modal</button>
+    <app-modal 
+      *ngIf="showModal" 
+      (close)="triggerModal()" 
+      [title]="'This is modal'"
+      [content]="'Shrimp is galaxy from heaven and as the rose thou art sick. Invisible worm, the vision and the void.'"
+      [button]="'Close'"
+    >
+    </app-modal>
+    
+    <app-divider [color]="'#118ab2'">
+      <h1>Accordion</h1>
+    </app-divider>
+    <app-accordion [items]="accordionItems"></app-accordion>
+</div>

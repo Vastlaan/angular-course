@@ -1,0 +1,20 @@
+<form class='form' [formGroup]='cardForm' (ngSubmit)="onSubmit()">
+  <app-input [control]="cardForm.controls.name" [options]=" {label: 'Name', placeholder: 'full name'} "></app-input>
+  <app-input [control]="cardForm.controls.cardNumber" [options]=" {label: 'Card Number', placeholder: '16 digit credit card number'} "></app-input>
+  <app-input [control]="cardForm.controls.expiration" [options]=" {label: 'Expirtation', placeholder: 'expiration date MM/YY'} "></app-input>
+  <app-input [control]="cardForm.controls.controlNumber" [options]=" {label: 'Control Number', placeholder: '3 digit control number'} "></app-input>
+
+  <div class="button">
+    <button type="submit" [ngClass]="{ disabled: !cardForm.valid}">Submit</button>
+    <button type='button' class='button__reset' (click)="resetForm()">Reset</button>
+  </div>
+</form>
+
+
+<!-- For debugging -->
+<div>Form values: {{cardForm.value | json}}</div>
+<div>Form Valid: {{cardForm.valid}}</div>
+<div>Form control name errors: {{cardForm.controls.name.errors | json }}</div>
+<div>Form control card number errors: {{cardForm.controls.cardNumber.errors | json }}</div>
+<div>Form control expiration errors: {{cardForm.controls.expiration.errors | json }}</div>
+<div>Form control controlNumber errors: {{cardForm.controls.controlNumber.errors | json }}</div>

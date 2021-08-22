@@ -1,0 +1,9 @@
+<div class="modal"  (click)="removeComponent()">
+  <div (click)="$event.stopPropagation()" class="inner">
+    <h3>{{title}}</h3>
+    <p>
+      {{content}}
+    </p>
+    <button (click)="removeComponent()">{{button}}</button>
+  </div>
+</div>

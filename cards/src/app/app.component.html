@@ -1,0 +1,14 @@
+<section class="section">
+  <!-- example with *ngFor structural directive -->
+  <app-card 
+    *ngFor="let post of posts"
+    [title]="post.title"
+    [author]="post.author"
+    [imageUrl]="post.imageUrl"
+    [text]="post.text"
+  ></app-card>
+
+  <!-- example hard coded value -->
+  <app-card [title]="posts[2].title" [author]="posts[2].author" [imageUrl]="posts[2].imageUrl" [text]="posts[2].text">
+  </app-card>
+</section>

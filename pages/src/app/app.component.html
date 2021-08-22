@@ -1,0 +1,52 @@
+
+<section>
+  <nav class="nav">
+    <ul class="list">
+      <li class="list__item">
+        <a (click)="currentPage = currentPage -1" [ngClass]="{disabled: currentPage===0}" class="list__item--link">Prev</a>
+      </li>
+      <ng-container *ngFor="let image of images; let i=index;">
+        <li class="list__item" *ngIf="displayPages(i)">
+          <a 
+            [ngClass]="{active: currentPage===i}"  
+            class='list__item--link'
+            (click)=" currentPage = i "
+          >
+              {{i+1}}
+          </a>
+        </li>
+      </ng-container>
+      <li class="list__item">
+        <a (click)="currentPage = currentPage + 1" [ngClass]="{disabled: currentPage===(images.length - 1)}" class="list__item--link">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="story">
+    <h1>{{images[currentPage].title}}</h1>
+    <div class="story__image">
+      <img [src]="images[currentPage].url" [alt]="images[currentPage].title">
+    </div>
+  </div>
+  <!-- ===============EXAMPLE OF NG SWITCH ==================================== -->
+  
+  
+  <div [ngSwitch]="currentPage" [applyClass]="{active: true}">
+    <p *ngSwitchCase="0"> this is page 1</p>
+    <p *ngSwitchCase="1"> this is page 2</p>
+    <p *ngSwitchCase="1"> this is page 2</p>
+    <p *ngSwitchDefault> And this is not a page 1 or 2</p>
+  
+  </div>
+
+  <ul *appTimes="5; let index=iteration">
+    <li>{{index}}</li>
+  </ul>
+</section>
+
+
+
+
+<!-- [ngClass]="getClass()" ,where getClass() is a method defined in component and returns a string of class name or array of class names -->
+<!-- [ngClass]="{className: boolean}" ,for example: [ngClass]="{bold: true}" if true adds class otherwise removes -->
+<!-- [ngClass]=" 'className' " ,for example: [ngClass]=" 'active' " if string is passed, class is added -->

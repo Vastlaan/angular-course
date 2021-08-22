@@ -1,0 +1,8 @@
+<div class="sectionNarrow">
+  <div class="image">
+    <img *ngIf="url" [src]="url" [alt]="name">
+  </div>
+  <div class="button">
+    <button (click)='changePhoto()'>Get Photo</button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="list">
+  <div class="item" *ngFor="let item of items">
+    <img [src]="item.imageUrl" [alt]="item.title">
+    <div class="item__content">
+      <h3>{{item.title}}</h3>
+      <p>{{item.description}}</p>
+    </div>
+  </div>
+</div>

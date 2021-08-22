@@ -1,0 +1,29 @@
+.list {
+  margin: 2.7rem auto;
+  padding: 1.4rem;
+  border: 1px solid #ddd;
+}
+
+.table {
+  width: 100%;
+
+  thead {
+    font-weight: 900;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+  }
+
+  tr {
+    td {
+      min-width: 10rem;
+      border: 1px solid #ddd;
+      padding: 0.3rem 0.6rem;
+    }
+  }
+
+  tbody {
+    td {
+      font-size: 1.6rem;
+    }
+  }
+}

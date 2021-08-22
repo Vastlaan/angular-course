@@ -1,0 +1,19 @@
+.divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 1.4rem 0;
+
+  h1 {
+    margin: 0 1.4rem;
+    color: inherit;
+  }
+}
+
+.line {
+  margin: 2.7rem 1.4rem;
+  height: 1px;
+  background-color: inherit;
+  box-shadow: inherit;
+  flex: 1;
+}

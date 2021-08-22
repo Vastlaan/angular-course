@@ -1,0 +1,13 @@
+<div class="placeholder">
+  <div class="header" *ngIf="header">
+    <div class="image"></div>
+    <div class="paragraphs">
+      <div class="line"></div>
+      <div class="line__small"></div>
+      <div class="line__small"></div>
+    </div>
+  </div>
+  <div class="paragraphs" >
+    <div class="line__small" *ngFor="let in of counter(); let i = index;"></div>
+  </div>
+</div>

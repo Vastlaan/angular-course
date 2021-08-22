@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit()" #emailForm='ngForm'>
+
+  <div class="fields">
+    <!-- [(ngModel)] syntax is the two way binding, it asigns value of the input to email and email to the value of the input -->
+    <input 
+      pattern='.+@.+\..+'
+      type="email" 
+      name='email' 
+      required 
+      [(ngModel)]="email"
+      #emailControl='ngModel'
+    >
+    <ng-container *ngIf='emailControl.invalid && emailControl.touched'>
+      <small *ngIf="emailControl.errors?.required">This field is required</small>
+      <small *ngIf="emailControl.errors?.pattern">Please provide valide email</small>
+    </ng-container>
+    <input type="password" name="password" [(ngModel)]='password'>
+  </div>
+
+  <button type="submit" [disabled]="emailForm.invalid">Submit Form</button>
+</form>
+
+<hr/>
+
+<div>  Is form valid: {{emailForm.valid}} </div>
+<div> Email form: {{emailForm.value | json }} </div>
+<div> Email controls: {{emailForm.controls.email?.errors | json}}</div>

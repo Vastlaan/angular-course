@@ -1,0 +1,43 @@
+
+<main class='container is-centered'>
+  <h1 class='title has-text-centered'>Generat Password</h1>
+  <!-- example of interpolation string -->
+  <h4 class='has-text-centered mb-4'>{{greetings}}</h4>
+
+  <div class="container centered kurwa">
+    <div class='field'>
+      <label for="passLength">
+        Password length:
+      </label>
+      <input type="text" (input)="onLengthUpdate($event)" [value]="length">
+    </div>
+    
+    <div class='field'>
+      <label for="useLetters">Use letters:</label>
+      <input type="checkbox" [checked]="includeLetters" (click)="onChangeUseLetters()" aria-label='use letters checkbox'>
+    </div>
+    
+    <div class='field'>
+      <label for="useNumbers">Use numbers:</label>
+      <input type="checkbox" (click)="onChangeUseNumbers()" [checked]="includeNumbers" aria-label='use numbers checkbox'>
+    </div>
+    
+    <div class='field'>
+      <label for="useSymbols">Use symbols:</label>
+      <input type="checkbox" (click)="onChangeUseSymbols()" [checked]="includeSymbols" aria-label='use symbols checkbox'>
+    </div>
+    
+    <div class='field'>
+      <!-- example of event binding (event) -->
+      <button class='button is-primary' [disabled]='isReady()' (click)="onButtonClick()">Generate</button> 
+    </div>
+    
+    <!-- example of structural directive *ngIf='component class property' -->
+    <div class='box m-2' *ngIf="password">
+      <label for="generatedPassword">Your password:</label>
+      <!-- example of property binding [property] -->
+      <input name="generatedPassword" id="generatedPassword" [value]="password">
+    </div>
+  </div>
+  
+</main>

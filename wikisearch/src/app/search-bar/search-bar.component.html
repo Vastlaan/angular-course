@@ -1,0 +1,6 @@
+<div class="search">
+
+  <form (submit)="onFormSubmit($event)">
+    <input type="text" (input)="term = $any($event).target.value" [value]="term">
+  </form>
+</div>

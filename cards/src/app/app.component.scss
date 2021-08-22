@@ -1,0 +1,13 @@
+// very important :host refers to the component itself (in this case app-root)
+:host {
+  padding: 1.4rem;
+}
+
+.section {
+  max-width: 996px;
+  margin: 0 auto;
+  padding: 1.4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

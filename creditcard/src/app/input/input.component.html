@@ -1,0 +1,21 @@
+<div class="field">
+  <label [for]="options.label">{{options.label}}:</label>
+  <input [formControl]='control' [name]="options.label" type="text" [placeholder]="options.placeholder">
+  <ng-container *ngIf='control.touched'>
+    <ng-container *ngIf='control.errors'>
+      <small class="error" *ngIf='control.errors?.required'>
+        <mat-icon class='icon'>error</mat-icon>This field is required
+      </small>
+      <small class="error" *ngIf='control.errors?.minlength'>
+        <mat-icon class='icon'>error</mat-icon>This field must contain at least {{control.errors.minlength.requiredLength}} characters
+      </small>
+      <small class="error" *ngIf='control.errors?.maxlength'>
+        <mat-icon class='icon'>error</mat-icon>This field must contain at most {{control.errors.maxlength.requiredLength}} characters
+      </small>
+      <small class="error" *ngIf='control.errors?.pattern'>
+        <mat-icon class='icon'>error</mat-icon>Please enter a valid expiration date
+        characters
+      </small>
+    </ng-container>
+  </ng-container>
+</div>

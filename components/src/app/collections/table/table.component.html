@@ -1,0 +1,24 @@
+<!-- 
+<div class="table">
+  <div class="cell bold">Name:</div>
+  <div class="cell bold">Age:</div>
+  <div class="cell bold">Gender:</div>
+</div>
+<table class="table" *ngFor="let person of data">
+  <div class="cell">{{person.name}}</div>
+  <div class="cell">{{person.age}}</div>
+  <div class="cell">{{person.gender}}</div>
+</table> -->
+
+<table [ngClass]="classNames">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headers">{{header.label}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let person of data'>
+      <td *ngFor='let header of headers'>{{person[header.key]}}</td>
+    </tr>
+  </tbody>
+</table>

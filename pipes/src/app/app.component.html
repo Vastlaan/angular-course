@@ -1,0 +1,63 @@
+<section class="section">
+  <h1 class='title'>Payment Form</h1>
+
+  <div class="grid">
+    <div class="inputs">
+      <div class="field">
+        <label for="name">
+          Name:
+        </label>
+        <input (input)="updateName($event)" type="text" name="name">
+      </div>
+      <div class="field">
+        <label for="date">
+          Payment Date:
+        </label>
+        <input (input)="updateDate($event)" type="date" name="date">
+      </div>
+      <div class="field">
+        <label for="amount">
+          Amount:
+        </label>
+        <input (input)="updateAmount($event)" type="text" name="amount">
+      </div>
+    </div>
+    <div class="outputs">
+      <div class="field">
+        <label for="nameOut">
+          Name:
+        </label>
+        <p>{{name | uppercase}}</p>
+      </div>
+      <div class="field">
+        <label for="dateOut">
+          Payment Date:
+        </label>
+        <p>{{date | date: "longDate"}}</p>
+      </div>
+      <div class="field">
+        <label for="amountOut">
+          Amount:
+        </label>
+        <p *ngIf="amount>0">{{amount | currency: "EUR"}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="inputs">
+    <h1>Custom Pipe</h1>
+
+    <div class="field">
+      <label for="distance">
+        Distance in km:
+      </label>
+      <input (input)="updateDistance($event)" type="text" name="distance">
+      <hr>
+      <label>
+        Distance in miles:
+      </label>
+      <p *ngIf='distance > 0'>{{distance | convert: "in" | number: "1.2-2"}}</p>
+    </div>
+  </div>
+
+</section>

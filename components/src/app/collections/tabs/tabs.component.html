@@ -1,0 +1,16 @@
+<div class="tabs">
+  <ul class="list">
+    <a routerLink="./" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">
+      <li>Biography</li>
+    </a><a routerLink="./company" routerLinkActive='active'>
+      <li>Company</li>
+    </a>
+    <!-- alternative property binding routeLink syntax (accept variables from ts module) -->
+    <a [routerLink]=" ['./', 'partner'] " routerLinkActive='active'>
+      <li>Partner</li>
+    </a>
+  </ul>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  inset: 0;
+}
+
+.inner {
+  padding: 2.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: snow;
+
+  h3 {
+    font-size: 2.7rem;
+    font-weight: 600;
+    color: var(--color-black);
+    text-align: center;
+  }
+  p {
+    margin: 1.9rem auto 2.7rem auto;
+    font-size: 1.6rem;
+    max-width: 45rem;
+    color: var(--color-grey-4);
+    text-align: center;
+  }
+}
